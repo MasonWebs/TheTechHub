@@ -16,61 +16,69 @@ export function Hero() {
         }}
       />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 text-center">
+      <div className="relative z-10 max-w-4xl mx-auto px-6 text-center flex flex-col items-center">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="mb-8"
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.7, ease: 'easeOut' }}
+          className="mb-6"
         >
-          <Image
-            src="/Logo.png"
-            alt="The Tech Hub Logo"
-            width={200}
-            height={200}
-            className="w-32 h-32 md:w-48 md:h-48 mx-auto"
-          />
+          <div className="relative inline-block">
+            <div className="absolute inset-0 rounded-full bg-primary/20 blur-2xl scale-150" />
+            <Image
+              src="/Logo.png"
+              alt="The Tech Hub Logo"
+              width={160}
+              height={160}
+              className="relative w-28 h-28 md:w-36 md:h-36 mx-auto drop-shadow-[0_0_24px_rgba(139,92,246,0.5)]"
+            />
+          </div>
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.7, delay: 0.15 }}
         >
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold font-display text-text-primary mb-6 leading-tight">
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold font-display text-text-primary mb-4 leading-tight tracking-tight">
             End to End <span className="text-primary">Support</span>
           </h1>
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
+          transition={{ duration: 0.7, delay: 0.3 }}
+          className="flex flex-col items-center gap-3 mb-10"
         >
-          <p className="text-lg md:text-xl text-text-muted mb-4 max-w-2xl mx-auto">
+          <p className="text-lg md:text-xl text-text-muted max-w-xl mx-auto leading-relaxed">
             Your trusted tech partner in Rochelle, IL. From repairs to custom builds, we handle all your tech needs.
           </p>
-          <p className="text-base md:text-lg text-accent mb-8 max-w-2xl mx-auto font-semibold">
-            Reliable • Professional • Local
-          </p>
+          <div className="flex items-center gap-3 text-sm font-semibold text-accent tracking-widest uppercase">
+            <span>Reliable</span>
+            <span className="w-1 h-1 rounded-full bg-accent" />
+            <span>Professional</span>
+            <span className="w-1 h-1 rounded-full bg-accent" />
+            <span>Local</span>
+          </div>
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
+          transition={{ duration: 0.7, delay: 0.45 }}
           className="flex flex-col sm:flex-row gap-4 justify-center items-center"
         >
           <Link
             href="/services"
-            className="px-8 py-4 bg-primary hover:bg-accent text-bg-primary font-bold rounded-lg transition-all duration-300 flex items-center gap-2 group hover:shadow-lg hover:shadow-primary/50"
+            className="px-8 py-3.5 bg-primary hover:bg-accent text-bg-primary font-bold rounded-lg transition-all duration-300 flex items-center gap-2 group hover:shadow-lg hover:shadow-primary/40 text-base"
           >
             Explore Services
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
           </Link>
           <Link
             href="/contact"
-            className="px-8 py-4 border-2 border-primary hover:border-accent text-primary hover:text-accent font-bold rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-primary/25"
+            className="px-8 py-3.5 border-2 border-primary/60 hover:border-primary text-text-muted hover:text-text-primary font-semibold rounded-lg transition-all duration-300 text-base"
           >
             Contact Us
           </Link>
