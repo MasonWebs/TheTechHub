@@ -88,7 +88,7 @@ export function Header() {
           >
             <Link href="/" className="group">
               <Image
-                src="/Title.png"
+                src="/Log.png"
                 alt="The Tech Hub"
                 width={180}
                 height={72}
