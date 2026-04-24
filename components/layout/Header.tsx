@@ -53,7 +53,7 @@ export function Header() {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`px-4 py-1.5 text-xs font-medium tracking-widest uppercase transition-all duration-200 rounded-sm ${
+                className={`px-4 py-1.5 text-xs font-medium tracking-widest uppercase whitespace-nowrap transition-all duration-200 rounded-sm ${
                   isActive(link.href)
                     ? 'text-text-primary border-b-2 border-primary'
                     : 'text-text-muted hover:text-text-primary'
@@ -92,7 +92,7 @@ export function Header() {
                 alt="The Tech Hub"
                 width={180}
                 height={72}
-                className="h-14 w-auto opacity-90 group-hover:opacity-100 transition-opacity"
+                className="h-16 w-auto opacity-90 group-hover:opacity-100 transition-opacity"
               />
             </Link>
           </motion.div>

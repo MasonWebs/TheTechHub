@@ -30,7 +30,7 @@ export function Hero() {
               alt="The Tech Hub"
               width={500}
               height={200}
-              className="relative w-64 md:w-96 mx-auto drop-shadow-[0_0_24px_rgba(139,92,246,0.5)]"
+              className="relative w-64 md:w-96 mx-auto drop-shadow-[0_0_24px_rgba(139,92,246,0.5)] mix-blend-screen"
             />
           </div>
         </motion.div>
