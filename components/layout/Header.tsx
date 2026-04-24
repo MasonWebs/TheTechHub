@@ -36,11 +36,12 @@ export function Header() {
       <header
         className={`sticky top-0 z-50 transition-all duration-500 ${
           isScrolled
-            ? 'bg-bg-primary/95 backdrop-blur-md border-b border-white/5 shadow-lg shadow-black/20'
+            ? 'bg-bg-primary/95 backdrop-blur-md shadow-lg shadow-black/20'
             : 'bg-transparent'
         }`}
       >
-        <nav className="max-w-7xl mx-auto px-8 py-3 grid grid-cols-3 items-center">
+        {/* Top bar: Logo | Company Name | CTA */}
+        <div className="max-w-7xl mx-auto px-8 py-3 grid grid-cols-3 items-center border-b border-white/5">
           {/* Logo - Left */}
           <motion.div
             initial={{ opacity: 0, x: -16 }}
@@ -48,7 +49,7 @@ export function Header() {
             transition={{ duration: 0.5 }}
             className="flex items-center"
           >
-            <Link href="/" className="flex items-center gap-2.5 group">
+            <Link href="/" className="flex items-center group">
               <Image
                 src="/Logo.png"
                 alt="The Tech Hub Logo"
@@ -56,32 +57,19 @@ export function Header() {
                 height={36}
                 className="h-9 w-auto opacity-90 group-hover:opacity-100 transition-opacity"
               />
-              <span className="text-sm font-semibold text-text-muted group-hover:text-text-primary transition-colors tracking-wide hidden sm:inline">
-                The Tech Hub
-              </span>
             </Link>
           </motion.div>
 
-          {/* Nav Links - Center */}
+          {/* Company Name - Center */}
           <motion.div
             initial={{ opacity: 0, y: -8 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="hidden md:flex items-center justify-center gap-1"
+            className="flex justify-center"
           >
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className={`px-4 py-1.5 text-sm rounded-md transition-all duration-200 font-medium ${
-                  isActive(link.href)
-                    ? 'text-text-primary bg-white/10'
-                    : 'text-text-muted hover:text-text-primary hover:bg-white/5'
-                }`}
-              >
-                {link.label}
-              </Link>
-            ))}
+            <Link href="/" className="text-xl font-bold font-display text-text-primary hover:text-accent transition-colors tracking-wide">
+              The Tech Hub
+            </Link>
           </motion.div>
 
           {/* CTA + Mobile Button - Right */}
@@ -110,7 +98,29 @@ export function Header() {
               )}
             </button>
           </motion.div>
-        </nav>
+        </div>
+
+        {/* Nav links sub-bar */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="hidden md:flex justify-center gap-1 px-8 py-1.5 border-b border-white/5"
+        >
+          {navLinks.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              className={`px-5 py-1 text-xs font-medium tracking-widest uppercase transition-all duration-200 rounded-sm ${
+                isActive(link.href)
+                  ? 'text-text-primary border-b-2 border-primary'
+                  : 'text-text-muted hover:text-text-primary'
+              }`}
+            >
+              {link.label}
+            </Link>
+          ))}
+        </motion.div>
       </header>
 
       {/* Mobile Menu */}
