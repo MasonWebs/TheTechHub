@@ -52,7 +52,7 @@ export function Header() {
           >
             <Link href="/" className="flex items-center group">
               <Image
-                src="/Logo.png"
+                src="/Log.png"
                 alt="The Tech Hub Logo"
                 width={36}
                 height={36}

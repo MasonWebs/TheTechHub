@@ -26,11 +26,11 @@ export function Hero() {
           <div className="relative inline-block">
             <div className="absolute inset-0 rounded-full bg-primary/20 blur-2xl scale-150" />
             <Image
-              src="/Logo.png"
+              src="/Log.png"
               alt="The Tech Hub Logo"
-              width={160}
-              height={160}
-              className="relative w-28 h-28 md:w-36 md:h-36 mx-auto drop-shadow-[0_0_24px_rgba(139,92,246,0.5)]"
+              width={220}
+              height={220}
+              className="relative w-40 h-40 md:w-56 md:h-56 mx-auto drop-shadow-[0_0_24px_rgba(139,92,246,0.5)] border-4 border-black rounded-xl"
             />
           </div>
         </motion.div>
