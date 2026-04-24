@@ -34,84 +34,82 @@ export function Header() {
   return (
     <>
       <header
-        className={`sticky top-0 z-50 transition-all duration-300 ${
+        className={`sticky top-0 z-50 transition-all duration-500 ${
           isScrolled
-            ? 'bg-bg-primary/80 backdrop-blur-md border-b border-border'
+            ? 'bg-bg-primary/95 backdrop-blur-md border-b border-white/5 shadow-lg shadow-black/20'
             : 'bg-transparent'
         }`}
       >
-        <nav className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+        <nav className="max-w-7xl mx-auto px-8 py-3 grid grid-cols-3 items-center">
           {/* Logo - Left */}
           <motion.div
-            initial={{ opacity: 0, x: -20 }}
+            initial={{ opacity: 0, x: -16 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
-            className="flex-shrink-0"
+            className="flex items-center"
           >
-            <Link href="/" className="flex items-center group">
-              <div className="rounded-lg group-hover:opacity-80 transition-opacity">
-                <Image
-                  src="/Logo.png"
-                  alt="The Tech Hub Logo"
-                  width={40}
-                  height={40}
-                  className="h-10 w-auto"
-                />
-              </div>
+            <Link href="/" className="flex items-center gap-2.5 group">
+              <Image
+                src="/Logo.png"
+                alt="The Tech Hub Logo"
+                width={36}
+                height={36}
+                className="h-9 w-auto opacity-90 group-hover:opacity-100 transition-opacity"
+              />
+              <span className="text-sm font-semibold text-text-muted group-hover:text-text-primary transition-colors tracking-wide hidden sm:inline">
+                The Tech Hub
+              </span>
             </Link>
           </motion.div>
 
-          {/* Company Name - Center */}
+          {/* Nav Links - Center */}
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="flex-1 flex justify-center"
+            initial={{ opacity: 0, y: -8 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="hidden md:flex items-center justify-center gap-1"
           >
-            <Link href="/" className="text-2xl font-bold font-display text-text-primary hover:text-accent transition-colors">
-              The Tech Hub
-            </Link>
-          </motion.div>
-
-          {/* Desktop Nav - Right */}
-          <div className="flex-shrink-0 hidden md:flex items-center gap-1">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className={`px-4 py-2 rounded-lg transition-colors ${
+                className={`px-4 py-1.5 text-sm rounded-md transition-all duration-200 font-medium ${
                   isActive(link.href)
-                    ? 'bg-primary text-bg-primary font-semibold'
-                    : 'text-text-muted hover:text-text-primary'
+                    ? 'text-text-primary bg-white/10'
+                    : 'text-text-muted hover:text-text-primary hover:bg-white/5'
                 }`}
               >
                 {link.label}
               </Link>
             ))}
-          </div>
+          </motion.div>
 
-          {/* Desktop CTA Button */}
-          <div className="hidden md:block flex-shrink-0 ml-4">
+          {/* CTA + Mobile Button - Right */}
+          <motion.div
+            initial={{ opacity: 0, x: 16 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="flex items-center justify-end gap-3"
+          >
             <Link
               href="/contact"
-              className="px-6 py-2 bg-primary hover:bg-accent text-bg-primary font-semibold rounded-lg transition-colors"
+              className="hidden md:inline-flex items-center px-5 py-1.5 text-sm font-semibold bg-primary hover:bg-primary/90 text-white rounded-md transition-all duration-200 shadow-sm hover:shadow-primary/30 hover:shadow-md"
             >
               Get Support
             </Link>
-          </div>
 
-          {/* Mobile Menu Button */}
-          <button
-            className="md:hidden p-2 hover:bg-bg-surface rounded-lg transition-colors flex-shrink-0"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            aria-label="Toggle menu"
-          >
-            {isMobileMenuOpen ? (
-              <X className="w-6 h-6 text-text-primary" />
-            ) : (
-              <Menu className="w-6 h-6 text-text-primary" />
-            )}
-          </button>
+            <button
+              className="md:hidden p-2 hover:bg-white/5 rounded-md transition-colors"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              aria-label="Toggle menu"
+            >
+              {isMobileMenuOpen ? (
+                <X className="w-5 h-5 text-text-primary" />
+              ) : (
+                <Menu className="w-5 h-5 text-text-primary" />
+              )}
+            </button>
+          </motion.div>
         </nav>
       </header>
 
