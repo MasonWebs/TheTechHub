@@ -21,7 +21,7 @@ export function Hero() {
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.7, ease: 'easeOut' }}
-          className="mb-6"
+          className="mb-2"
         >
           <div className="relative flex justify-center">
             <div className="absolute inset-0 bg-primary/20 blur-2xl scale-150" />
@@ -40,7 +40,7 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.15 }}
         >
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold font-display text-text-primary mb-4 leading-tight tracking-tight">
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold font-display text-text-primary mb-2 leading-tight tracking-tight">
             End to End <span className="text-primary">Support</span>
           </h1>
         </motion.div>
@@ -49,7 +49,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.3 }}
-          className="flex flex-col items-center gap-3 mb-10"
+          className="flex flex-col items-center gap-2 mb-8"
         >
           <p className="text-lg md:text-xl text-text-muted max-w-xl mx-auto leading-relaxed">
             Your trusted tech partner in Rochelle, IL. From repairs to custom builds, we handle all your tech needs.
