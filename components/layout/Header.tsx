@@ -11,6 +11,7 @@ import { MobileNav } from './MobileNav'
 const navLinks = [
   { href: '/', label: 'Home' },
   { href: '/services', label: 'Services' },
+  { href: '/build', label: 'Build a PC' },
   { href: '/about', label: 'About' },
   { href: '/contact', label: 'Contact' },
 ]
