@@ -30,7 +30,7 @@ export function Hero() {
               alt="The Tech Hub Logo"
               width={220}
               height={220}
-              className="relative w-40 h-40 md:w-56 md:h-56 mx-auto drop-shadow-[0_0_24px_rgba(139,92,246,0.5)] border-4 border-black rounded-xl"
+              className="relative w-40 h-40 md:w-56 md:h-56 mx-auto drop-shadow-[0_0_24px_rgba(139,92,246,0.5)] border-4 border-black rounded-full"
             />
           </div>
         </motion.div>
