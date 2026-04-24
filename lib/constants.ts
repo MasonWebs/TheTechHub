@@ -2,9 +2,9 @@ export const businessInfo = {
   name: 'The Tech Hub',
   tagline: 'End to End Support',
   location: 'Rochelle, IL',
-  address: '[PLACEHOLDER] 415 Cherry Avenue, Rochelle, IL 61068',
-  phone: '[PLACEHOLDER] (815) 561-6250',
-  email: '[PLACEHOLDER] serdman73@gmail.com',
+  address: '415 Cherry Avenue, Rochelle, IL 61068',
+  phone: '(815) 561-6250',
+  email: 'serdman73@gmail.com',
   hours: {
     monday: '9:00 AM - 5:00 PM',
     tuesday: '9:00 AM - 5:00 PM',
@@ -14,11 +14,11 @@ export const businessInfo = {
     saturday: '10:00 AM - 4:00 PM',
     sunday: 'CLOSED',
   },
-  mapEmbed: '[PLACEHOLDER] Replace with Google Maps iframe src',
+  mapEmbed: '',
   social: {
-    facebook: '[PLACEHOLDER]',
-    twitter: '[PLACEHOLDER]',
-    linkedin: '[PLACEHOLDER]',
+    facebook: '',
+    twitter: '',
+    linkedin: '',
   },
 }
 
